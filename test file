@@ -1,0 +1,28 @@
+n nor odd.def is_number(value):
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+while True:
+    user_input = input("Enter a number (or type 'exit' to quit): ").strip()
+    
+    if user_input.lower() == 'exit':
+        print("Goodbye!")
+        break
+
+    if not is_number(user_input):
+        print("Invalid input. Please enter a valid number.")
+        continue
+
+    number = float(user_input)
+
+    if number.is_integer():
+        number = int(number)
+        if number % 2 == 0:
+            print(f"{number} is an Even integer.")
+        else:
+            print(f"{number} is an Odd integer.")
+    else:
+        print(f"{number} is not an integer, so it's neither evenor odd")
